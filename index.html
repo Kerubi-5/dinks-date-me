@@ -59,10 +59,10 @@
           <span>Meet the Crew</span>
           <i data-lucide="arrow-down" class="w-4 h-4"></i>
         </a>
-        <button onclick="copyContact()" class="px-6 py-3 bg-zinc-950 border border-zinc-800 text-brand-cream font-semibold rounded-lg hover:bg-zinc-900 transition duration-200 inline-flex items-center gap-2 relative">
-          <i data-lucide="message-circle" class="w-4 h-4 text-brand-accent"></i>
-          <span id="copy-text">Let's Grab Coffee</span>
-        </button>
+        <a href="https://t.me/TheKimDevs" target="_blank" class="px-6 py-3 bg-zinc-950 border border-zinc-800 text-brand-cream font-semibold rounded-lg hover:bg-zinc-900 transition duration-200 inline-flex items-center gap-2">
+          <i data-lucide="send" class="w-4 h-4 text-brand-accent"></i>
+          <span>Let's Chat on Telegram</span>
+        </a>
       </div>
     </div>
     <!-- Decorative background elements -->
@@ -224,13 +224,13 @@
     <section class="text-center py-12 border-t border-zinc-850 space-y-6">
       <h3 class="font-serif text-2xl md:text-3xl font-semibold">Sound like your kind of vibe?</h3>
       <p class="text-zinc-400 max-w-md mx-auto text-sm">
-        If you are a DINK couple in the Philippines who hates drama, loves coffee, and wants to explore, click below to copy Kim's Telegram handle!
+        If you are a DINK couple in the Philippines who hates drama, loves board games, and wants to explore, click below to start a direct chat with Kim on Telegram!
       </p>
       <div>
-        <button onclick="copyContact()" class="px-8 py-4 bg-brand-cream text-brand-charcoal font-bold rounded-xl hover:bg-zinc-200 transition duration-200 inline-flex items-center gap-3 shadow-lg shadow-brand-cream/5" id="cta-btn">
-          <i data-lucide="message-circle" class="w-5 h-5"></i>
-          <span id="cta-text">Let's Grab Coffee</span>
-        </button>
+        <a href="https://t.me/TheKimDevs" target="_blank" class="px-8 py-4 bg-brand-cream text-brand-charcoal font-bold rounded-xl hover:bg-zinc-200 transition duration-200 inline-flex items-center gap-3 shadow-lg shadow-brand-cream/5">
+          <i data-lucide="send" class="w-5 h-5"></i>
+          <span>Let's Chat on Telegram</span>
+        </a>
       </div>
     </section>
 
@@ -243,37 +243,6 @@
   <script>
     // Initialize Lucide Icons
     lucide.createIcons();
-
-    // Copy to clipboard function
-    function copyContact() {
-      // Your Telegram handle as the copy trigger
-      const handle = "@TheKimDevs";
-      navigator.clipboard.writeText(handle).then(() => {
-        // Update hero copy button
-        const copyTextEl = document.getElementById("copy-text");
-        if (copyTextEl) copyTextEl.textContent = "Copied @TheKimDevs!";
-        
-        // Update CTA copy button
-        const ctaTextEl = document.getElementById("cta-text");
-        const ctaBtnEl = document.getElementById("cta-btn");
-        if (ctaTextEl) ctaTextEl.textContent = "Copied @TheKimDevs!";
-        if (ctaBtnEl) {
-          ctaBtnEl.classList.remove("bg-brand-cream", "text-brand-charcoal");
-          ctaBtnEl.classList.add("bg-brand-sage", "text-brand-charcoal");
-        }
-
-        setTimeout(() => {
-          if (copyTextEl) copyTextEl.textContent = "Let's Grab Coffee";
-          if (ctaTextEl) ctaTextEl.textContent = "Let's Grab Coffee";
-          if (ctaBtnEl) {
-            ctaBtnEl.classList.remove("bg-brand-sage");
-            ctaBtnEl.classList.add("bg-brand-cream");
-          }
-        }, 3000);
-      }).catch(err => {
-        console.error("Failed to copy handle: ", err);
-      });
-    }
   </script>
 </body>
 </html>
